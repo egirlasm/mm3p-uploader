@@ -1,0 +1,22 @@
+{
+    "name": "mm3p-uploader",
+    "version": "1.0.0",
+    "description": "file uploader with pure js",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eGirlAsm/mm3p-uploader.git"
+    },
+    "keywords": [
+        "upload"
+    ],
+    "author": "egirlasm",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/eGirlAsm/mm3p-uploader/issues"
+    },
+    "homepage": "https://github.com/eGirlAsm/mm3p-uploader#readme"
+}
