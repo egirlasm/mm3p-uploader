@@ -17,7 +17,7 @@ import mm3p from 'mm3p-uploader'
 // simple
  mm3p(element)
 
-
+// <div id="file_application"></div>
 // with ajax
  mm3p('file_application', {
             url: remote_host + "/api/file/upload/",
