@@ -1,3 +1,5 @@
+"use strict"
+
 var mm3p = function(el, param) {
 
     console.log(param)
@@ -48,7 +50,8 @@ var mm3p = function(el, param) {
             var reader = new FileReader();
             reader.readAsDataURL(e.target.files[0]);
 
-            makeRequest()
+            if (param.url != undefined)
+                makeRequest()
 
             //로드 한 후
             reader.onload = function() {
@@ -190,4 +193,4 @@ var mm3p = function(el, param) {
 
 
 
-export { mm3p }
+module.exports = mm3p;
