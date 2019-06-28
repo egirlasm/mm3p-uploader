@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/mm3p-uploader.svg)](https://badge.fury.io/js/mm3p-uploader)
+
 # mm3p-uploader
 file uploader with pure js
 
