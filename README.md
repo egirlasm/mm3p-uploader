@@ -1,6 +1,9 @@
 # mm3p-uploader
 file uploader with pure js
 
+# demo image
+![demo](./mm3p-demo.png)
+
 
 # install
 ```
@@ -9,6 +12,8 @@ npm install mm3p-uploader
 
 # usage 
 ```
+import mm3p from 'mm3p-uploader'
+
 // simple
  mm3p(element)
 

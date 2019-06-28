@@ -49,11 +49,12 @@ var mm3p = function(el, param) {
 
             var reader = new FileReader();
             reader.readAsDataURL(e.target.files[0]);
+            console.log(param)
+            if (param != undefined)
+                if (param.url != undefined)
+                    makeRequest()
 
-            if (param.url != undefined)
-                makeRequest()
-
-            //로드 한 후
+                //로드 한 후
             reader.onload = function() {
                 //로컬 이미지를 보여주기
                 // document.querySelector('#preview').src = reader.result;
