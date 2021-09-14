@@ -197,4 +197,4 @@ var mm3p = function(el, params) {
 
 
 
-// module.exports = mm3p;
+module.exports = mm3p;
