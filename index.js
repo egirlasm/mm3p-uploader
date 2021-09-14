@@ -1,8 +1,7 @@
 "use strict"
 
-var mm3p = function(el, param) {
+var mm3p = function(el, params) {
 
-    console.log(param)
     let image_count = 0;
     let image_canvas = []
 
@@ -39,20 +38,21 @@ var mm3p = function(el, param) {
 
     let div = root.appendChild(constructor)
 
-
+    var formData = new FormData()
     input.addEventListener("change", function(e) {
         // console.log(e.target.files)
         // console.log(e)
         if (e.target.files.length > 0) {
 
+            formData.append("file",e.target.files[0])
             image_count += e.target.files.length
 
             var reader = new FileReader();
             reader.readAsDataURL(e.target.files[0]);
-            console.log(param)
-            if (param != undefined)
-                if (param.url != undefined)
-                    makeRequest()
+            console.log(params)
+            if (params != undefined)
+                if (params.url != undefined)
+                    makeRequest(e)
 
                 //로드 한 후
             reader.onload = function() {
@@ -151,7 +151,7 @@ var mm3p = function(el, param) {
 
     var httpRequest;
 
-    function makeRequest() {
+    function makeRequest(e) {
         httpRequest = new XMLHttpRequest();
 
         if (!httpRequest) {
@@ -160,8 +160,8 @@ var mm3p = function(el, param) {
         }
         httpRequest.onreadystatechange = alertContents;
 
-        // httpRequest.setRequestHeader(param.header)
-        httpRequest.open(param.method, param.url);
+        // httpRequest.setRequestHeader(params.header)
+        httpRequest.open(params.method, params.url);
 
 
 
@@ -171,21 +171,24 @@ var mm3p = function(el, param) {
                 httpRequest.setRequestHeader(key, headers[key])
             }
         }
-        setHeaders(param.headers)
+        setHeaders(params.headers)
 
-        httpRequest.send();
+
+
+
+        httpRequest.send(formData);
     }
 
     function alertContents() {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
             if (httpRequest.status === 200) {
-                // console.log(typeof param.success, typeof param.failed)
-                if (typeof param.success == "function") {
-                    param.success(httpRequest.responseText)
+                // console.log(typeof params.success, typeof params.failed)
+                if (typeof params.success == "function") {
+                    params.success(httpRequest.responseText)
                 }
             } else {
-                if (typeof param.error == "function") {
-                    param.error(httpRequest.responseText)
+                if (typeof params.error == "function") {
+                    params.error(httpRequest.responseText)
                 }
             }
         }
@@ -194,4 +197,4 @@ var mm3p = function(el, param) {
 
 
 
-module.exports = mm3p;
+// module.exports = mm3p;

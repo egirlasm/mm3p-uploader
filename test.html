@@ -1,0 +1,33 @@
+<html>
+
+<body>
+
+
+<div id="file_application"></div>
+
+<script src="index.js"></script>
+<script>
+
+var remote_host = 'http://localhost:8000';
+var token = '';
+
+ mm3p('file_application', {
+            url: remote_host + "/api/file/upload/",
+            method: "PUT",
+            headers: {
+                "Authorization": "Authorization " + token,
+                "Accept": "application/json",
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            success: function(e) {
+                console.log(e)
+            },
+            error: function(e) {
+                console.log(e)
+            }
+        })
+
+
+</script>
+</body>
+</html>
