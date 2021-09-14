@@ -1,6 +1,6 @@
 {
     "name": "mm3p-uploader",
-    "version": "1.0.15",
+    "version": "1.0.16",
     "description": "file uploader with pure js",
     "main": "index.js",
     "scripts": {
